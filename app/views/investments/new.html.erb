@@ -1,0 +1,21 @@
+<h1>New Investment</h1>
+
+
+<%= form_tag(investments_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :entity_funding_id %><br />
+    <%= number_field_tag :entity_funding_id %>
+  </div>
+
+  <div>
+    <%= label_tag :funding_round_id %><br />
+    <%= number_field_tag :funding_round_id %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Investment" %>
+  </div>
+<% end %>

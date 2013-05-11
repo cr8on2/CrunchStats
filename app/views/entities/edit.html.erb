@@ -1,0 +1,41 @@
+<h1>Editing Entity #<%= @entity.id %></h1>
+
+
+<%= form_tag(entity_url(@entity), method: 'put') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name, @entity.name %>
+  </div>
+
+  <div>
+    <%= label_tag :kind %><br />
+    <%= text_field_tag :kind, @entity.kind %>
+  </div>
+
+  <div>
+    <%= label_tag :location %><br />
+    <%= text_field_tag :location, @entity.location %>
+  </div>
+
+  <div>
+    <%= label_tag :status %><br />
+    <%= text_field_tag :status, @entity.status %>
+  </div>
+
+  <div>
+    <%= label_tag :perma %><br />
+    <%= text_field_tag :perma, @entity.perma %>
+  </div>
+
+  <div>
+    <%= label_tag :industry_id %><br />
+    <%= number_field_tag :industry_id, @entity.industry_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Entity" %>
+  </div>
+
+<% end %>

@@ -1,0 +1,38 @@
+<h1>Entities</h1>
+
+<p><%= link_to 'Add a New Entity', new_entity_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Kind</th>
+      <th>Location</th>
+      <th>Status</th>
+      <th>Perma</th>
+      <th>Industry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @entities.each do |entity| %>
+    <tr>
+      <td><%= entity.name %></td>
+      <td><%= entity.kind %></td>
+      <td><%= entity.location %></td>
+      <td><%= entity.status %></td>
+      <td><%= entity.perma %></td>
+      <td><%= entity.industry_id %></td>
+  
+      <td><%= link_to 'Show', entity_url(entity) %></td>
+      <td><%= link_to 'Edit', edit_entity_url(entity) %></td>
+      <td><%= link_to 'Destroy', entity_url(entity), method: 'delete', data: { confirm: "Do you really want to delete this entity?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

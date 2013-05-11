@@ -1,0 +1,38 @@
+<h1>Fundingrounds</h1>
+
+<p><%= link_to 'Add a New Fundinground', new_fundinground_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Series</th>
+      <th>Amount</th>
+      <th>Currency</th>
+      <th>Date</th>
+      <th>Entity receiver</th>
+      <th>Investment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @fundingrounds.each do |fundinground| %>
+    <tr>
+      <td><%= fundinground.series %></td>
+      <td><%= fundinground.amount %></td>
+      <td><%= fundinground.currency %></td>
+      <td><%= fundinground.date %></td>
+      <td><%= fundinground.entity_receiver_id %></td>
+      <td><%= fundinground.investment_id %></td>
+  
+      <td><%= link_to 'Show', fundinground_url(fundinground) %></td>
+      <td><%= link_to 'Edit', edit_fundinground_url(fundinground) %></td>
+      <td><%= link_to 'Destroy', fundinground_url(fundinground), method: 'delete', data: { confirm: "Do you really want to delete this fundinground?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

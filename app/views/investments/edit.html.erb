@@ -1,0 +1,21 @@
+<h1>Editing Investment #<%= @investment.id %></h1>
+
+
+<%= form_tag(investment_url(@investment), method: 'put') do %>
+
+  <div>
+    <%= label_tag :entity_funding_id %><br />
+    <%= number_field_tag :entity_funding_id, @investment.entity_funding_id %>
+  </div>
+
+  <div>
+    <%= label_tag :funding_round_id %><br />
+    <%= number_field_tag :funding_round_id, @investment.funding_round_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Investment" %>
+  </div>
+
+<% end %>

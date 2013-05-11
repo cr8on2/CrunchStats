@@ -1,0 +1,16 @@
+<h1>Editing Industry #<%= @industry.id %></h1>
+
+
+<%= form_tag(industry_url(@industry), method: 'put') do %>
+
+  <div>
+    <%= label_tag :category %><br />
+    <%= text_field_tag :category, @industry.category %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Industry" %>
+  </div>
+
+<% end %>

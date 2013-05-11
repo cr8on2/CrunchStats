@@ -1,0 +1,41 @@
+<h1>Editing Fundinground #<%= @fundinground.id %></h1>
+
+
+<%= form_tag(fundinground_url(@fundinground), method: 'put') do %>
+
+  <div>
+    <%= label_tag :series %><br />
+    <%= text_field_tag :series, @fundinground.series %>
+  </div>
+
+  <div>
+    <%= label_tag :amount %><br />
+    <%= text_field_tag :amount, @fundinground.amount %>
+  </div>
+
+  <div>
+    <%= label_tag :currency %><br />
+    <%= text_field_tag :currency, @fundinground.currency %>
+  </div>
+
+  <div>
+    <%= label_tag :date %><br />
+    <%= text_field_tag :date, @fundinground.date %>
+  </div>
+
+  <div>
+    <%= label_tag :entity_receiver_id %><br />
+    <%= number_field_tag :entity_receiver_id, @fundinground.entity_receiver_id %>
+  </div>
+
+  <div>
+    <%= label_tag :investment_id %><br />
+    <%= number_field_tag :investment_id, @fundinground.investment_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Fundinground" %>
+  </div>
+
+<% end %>

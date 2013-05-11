@@ -1,0 +1,30 @@
+<h1>Investments</h1>
+
+<p><%= link_to 'Add a New Investment', new_investment_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Entity funding</th>
+      <th>Funding round</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @investments.each do |investment| %>
+    <tr>
+      <td><%= investment.entity_funding_id %></td>
+      <td><%= investment.funding_round_id %></td>
+  
+      <td><%= link_to 'Show', investment_url(investment) %></td>
+      <td><%= link_to 'Edit', edit_investment_url(investment) %></td>
+      <td><%= link_to 'Destroy', investment_url(investment), method: 'delete', data: { confirm: "Do you really want to delete this investment?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
